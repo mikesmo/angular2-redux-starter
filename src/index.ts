@@ -13,10 +13,10 @@ import { ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import { APP_BASE_HREF } from '@angular/common/index';
 import { NgRedux } from 'ng2-redux';
 
-import { RioSampleApp } from './containers/sample-app';
 import { SessionActions } from './actions/session';
 import { AuthService } from './services/auth/';
 import { ServerService } from './services/server/';
+import {MainApp} from './containers/main-app';
 
 declare const __PRODUCTION__: boolean;
 declare const __TEST__: boolean;
@@ -28,7 +28,7 @@ if (__PRODUCTION__) {
 }
 
 if (!__TEST__) {
-  bootstrap(RioSampleApp, [
+  bootstrap(MainApp, [
     NgRedux,
     SessionActions,
     AuthService,

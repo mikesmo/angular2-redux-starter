@@ -29,6 +29,12 @@ exports.css = {
   exclude: /node_modules/,
 };
 
+exports.scss = {
+  test: /\.scss$/,
+  loader: 'raw-loader!sass-loader',
+  exclude: /node_modules/,
+};
+
 exports.svg = makeFileLoader(/\.svg$/);
 exports.eot = makeFileLoader(/\.eot$/);
 exports.woff = makeFileLoader(/\.woff$/);
