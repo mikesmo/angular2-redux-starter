@@ -40,7 +40,7 @@
     'function-url-quotes': 'always',
     'indentation': 2,
     'max-empty-lines': 1,
-    'max-line-length': [ 80, {
+    'max-line-length': [ 120, {
       'ignore': 'non-comments',
     } ],
     'media-feature-colon-space-after': 'always',

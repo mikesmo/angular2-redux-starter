@@ -18,6 +18,14 @@ import { AuthService } from './services/auth/';
 import { ServerService } from './services/server/';
 import {MainApp} from './containers/main-app';
 
+// Required by Angular Material
+import {MdIconRegistry} from '@angular2-material/icon/icon-registry';
+import {Renderer} from '@angular/core';
+import {MdGestureConfig} from '@angular2-material/core/gestures/MdGestureConfig';
+import {HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
+import {DEMO_APP_ROUTE_PROVIDER} from './routes';
+import {disableDeprecatedForms, provideForms} from '@angular/forms';
+
 declare const __PRODUCTION__: boolean;
 declare const __TEST__: boolean;
 
@@ -34,7 +42,13 @@ if (!__TEST__) {
     AuthService,
     ServerService,
     HTTP_PROVIDERS,
-    ROUTER_PROVIDERS,
-    provide(APP_BASE_HREF, { useValue: '/' })
+    provide(APP_BASE_HREF, { useValue: '/' }),
+    // Required by Angular Material
+    MdIconRegistry,
+    Renderer,
+    provide(HAMMER_GESTURE_CONFIG, {useClass: MdGestureConfig}),
+    DEMO_APP_ROUTE_PROVIDER,
+    disableDeprecatedForms(),
+    provideForms(),
   ]);
 }
